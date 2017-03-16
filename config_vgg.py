@@ -34,15 +34,15 @@ class VGG16():
 
     def batch_norm_wrapper(self, inputs, is_training, decay = 0.999):
         
-    """Implementation of batch normalization for training.
-    The wrapper is taken from http://r2rt.com/implementing-batch-normalization-in-tensorflow.html
-    which is a simpler version of Tensorflow's 'official' version. See:
-    https://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/layers/python/layers/layers.py#L102
+        """Implementation of batch normalization for training.
+        The wrapper is taken from http://r2rt.com/implementing-batch-normalization-in-tensorflow.html
+        which is a simpler version of Tensorflow's 'official' version. See:
+        https://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/layers/python/layers/layers.py#L102
     
-    inputs: tensor
-        Tensor of layer output of size (Batchsize, height, width, channels)
-    is_training: bool
-        Indicator for training"""
+        inputs: tensor
+            Tensor of layer output of size (Batchsize, height, width, channels)
+        is_training: bool
+            Indicator for training"""
     
         scale = tf.Variable(tf.ones([inputs.get_shape()[-1]]))
         beta = tf.Variable(tf.zeros([inputs.get_shape()[-1]]))

@@ -10,7 +10,7 @@ import tensorflow as tf
 import cv2
 import os
 import csv
-
+import random
     
 def make_batches(path_to_csv, n_epochs ,height , width, batch_size, shuffle = True, training = True):
     
@@ -152,41 +152,29 @@ def augment(image):
     
 
 
-"""
-import csv
-wpath = 'complete_train.csv'
-wfile = open(wpath, 'wb')
-writer = csv.writer(wfile, delimiter=',')
 
-for file in os.listdir('./train'):
-    if file.split('.')[0] == 'cat':        
-        writer.writerow(['./train/'+file,0])
-    elif file.split('.')[0] == 'dog':
-        writer.writerow(['./train/'+file,1])  
-        
-# Randomize the Train set
-import random
-path = 'random_complete.csv'
-with open(path, "rb") as source:
-    reader = csv.reader(source)
-    data = [(random.random(), line) for line in reader]
-data.sort()
-wpath = 'random_complete.csv'
-with open(wpath, 'wb') as target:
-    writer = csv.writer(target, delimiter=',')
-    for _, line in data:
-        writer.writerow(line)
+def make_split_csv(csv_path):
+    """Make a CSV file with defined classes for cat and dogs"""
+    wfile = open(csv_path, 'wb')
+    writer = csv.writer(wfile, delimiter=',')
+    for file in os.listdir('./train'):
+        if file.split('.')[0] == 'cat':        
+            writer.writerow(['./train/'+file,0])
+        elif file.split('.')[0] == 'dog':
+            writer.writerow(['./train/'+file,1])  
+            
+def randomize_csv(csv_path):
+    """ Randomize the CSV file"""
+    with open(csv_path, "rb") as source:
+        reader = csv.reader(source)
+        data = [(random.random(), line) for line in reader]
+    data.sort()
+    with open(csv_path, 'wb') as target:
+        writer = csv.writer(target, delimiter=',')
+        for _, line in data:
+            writer.writerow(line)
 
-import csv
-wpath = 'test1.csv'
-wfile = open(wpath, 'wb')
-writer = csv.writer(wfile, delimiter=',')
-
-for file in os.listdir('./test'):
-    img_num = file.split('.')[0]
-    writer.writerow(['./test/'+file,img_num])
-  
-  
+"""  
 # For splitting train set into 90% and 10% (2500) portions
 count =0
 path = 'random_complete.csv'
