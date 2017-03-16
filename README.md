@@ -12,12 +12,12 @@ This is the implementation to solve Kaggle's cat vs dog segregation.
 - For detailed analysis of implementation, go through the Notebooks.
 
 # Submissions
-1. [1st Submission](https://www.cs.toronto.edu/~frossard/post/vgg16/)
-2. [2nd Submission](https://www.cs.toronto.edu/~frossard/post/vgg16/)
+1. [1st Submission csv](https://github.com/gondal1/cats_vs_dogs/blob/master/submission_A.csv)
+2. [2nd Submission csv](https://github.com/gondal1/cats_vs_dogs/blob/master/submission_B.csv)
 
 
 # Training progress for First run
 ![alt text](https://github.com/gondal1/cats_vs_dogs/blob/master/images/run1.png)
 
 # Training progress for Second run
-![alt text](https://github.com/gondal1/cats_vs_dogs/blob/master/images/run1.png)
+![alt text](https://github.com/gondal1/cats_vs_dogs/blob/master/images/run2.png)
