@@ -12,8 +12,8 @@ This is the implementation to solve Kaggle's cat vs dog segregation.
 - For detailed analysis of implementation, go through the Notebooks.
 
 # Submissions
-1. [1st Submission csv](https://github.com/gondal1/cats_vs_dogs/blob/master/submission_A.csv)
-2. [2nd Submission csv](https://github.com/gondal1/cats_vs_dogs/blob/master/submission_B.csv)
+1. [1st Submission csv with dog class probabilities](https://github.com/gondal1/cats_vs_dogs/blob/master/submission_A_dog_prob.csv)
+2. [2nd Submission csv with dog class probabilities](https://github.com/gondal1/cats_vs_dogs/blob/master/submission_B_dog_prob.csv)
 
 
 # Training progress for First run
