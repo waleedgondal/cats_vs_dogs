@@ -119,8 +119,8 @@ def write_submission_csv(csv_path, fnames, labels, num_iter, batch_size):
     writer.writerow(['id','label'])
     for i in range(num_iter): # Num of batches
         for j in range(batch_size): # Iteration per batch
-            label = str((labels[i])[j])
-            writer.writerow([(fnames[i])[j],label])
+            prob = round(((labels[i])[j,1]), 4) #str((labels[i])[j])
+            writer.writerow([(fnames[i])[j],prob])
             wfile.flush()
     wfile.close()    
     
