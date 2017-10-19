@@ -85,7 +85,7 @@ def read_data_from_csv(path_to_csv, n_epochs, height, width, training = True):
         tf_image = augment(tf_image)
     else:
         tf_image = tf.image.central_crop(tf_image, 0.95)
-        tf_image = tf.image.per_image_whitening(tf_image)
+        tf_image = tf.image.per_image_standardization(tf_image)
     size = tf.cast([height, width], tf.int32)
     tf_image = tf.image.resize_images(tf_image, size)
     tf_label = tf.cast(im_label, tf.int32)
@@ -146,7 +146,7 @@ def augment(image):
     distorted_image = tf.image.random_brightness(distorted_image, max_delta=0.05)
     distorted_image = tf.image.random_contrast(distorted_image, lower=0.6, upper=0.8)
     #distorted_image = tf.image.central_crop(distorted_image, 0.95)
-    distorted_image = tf.image.per_image_whitening(distorted_image)
+    distorted_image = tf.image.per_image_standardization(distorted_image)
     
     return distorted_image
     
